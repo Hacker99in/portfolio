@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+
+git config --global user.name "Hacker99in"
+git config --global user.email "08harshvardhan03@gmail.com"
