@@ -1,47 +1,29 @@
-import { motion } from 'framer-motion';
-import Reveal from './Reveal.jsx';
+import Reveal from './Reveal.jsx'
 
-function SkillBar({ name, level }) {
+export default function Skills({ skills }) {
   return (
-    <div className="skill-row">
-      <div className="skill-row-top">
-        <span>{name}</span>
-        <span className="pct">{level}%</span>
-      </div>
-      <div className="bar-track">
-        <motion.div
-          className="bar-fill"
-          initial={{ width: '0%' }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 1.1, ease: [0.2, 0.7, 0.2, 1] }}
-        />
-      </div>
-    </div>
-  );
-}
-
-export default function Skills({ categories }) {
-  return (
-    <section id="skills">
-      <div className="container">
-        <div className="section-label">SECTION 02</div>
-        <h2 className="section-title">
-          SKILL_<span className="accent">TREE</span>
-        </h2>
-        <div className="skills-grid">
-          {categories.map((cat, ci) => (
-            <Reveal key={cat.name} delay={ci * 0.08}>
-              <div className="panel" style={{ padding: 22 }}>
-                <h3 className="skill-cat-title">{cat.name}</h3>
-                {cat.items.map((item) => (
-                  <SkillBar key={item.name} name={item.name} level={item.level} />
-                ))}
-              </div>
-            </Reveal>
-          ))}
+    <section id="skills" className="container">
+      <Reveal>
+        <div className="section-heading">
+          <span className="num">02</span>
+          <h2>skills.json</h2>
+          <span className="rule" />
         </div>
+      </Reveal>
+      <div className="skills-grid">
+        {skills.map((group, gi) => (
+          <Reveal delay={gi * 0.08} key={group.category}>
+            <div className="panel skill-card">
+              <h3>&gt; {group.category}</h3>
+              {group.items.map((item) => (
+                <div className="skill-bar-row" key={item}>
+                  <span className="dot">■</span> {item}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
-  );
+  )
 }

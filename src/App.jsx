@@ -1,44 +1,42 @@
-import { useEffect, useState } from 'react';
-import data from './data/data.json';
-
-import BootScreen from './components/BootScreen.jsx';
-import CRTOverlay from './components/CRTOverlay.jsx';
-import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Skills from './components/Skills.jsx';
-import Projects from './components/Projects.jsx';
-import Resume from './components/Resume.jsx';
-import Contact from './components/Contact.jsx';
-import Footer from './components/Footer.jsx';
-import BackToTop from './components/BackToTop.jsx';
+import { useState } from 'react'
+import data from './data.json'
+import BootSequence from './components/BootSequence.jsx'
+import Navbar from './components/Navbar.jsx'
+import Hero from './components/Hero.jsx'
+import About from './components/About.jsx'
+import Skills from './components/Skills.jsx'
+import Projects from './components/Projects.jsx'
+import Resume from './components/Resume.jsx'
+import Terminal from './components/Terminal.jsx'
+import Footer from './components/Footer.jsx'
+import Character from './components/Character.jsx'
 
 export default function App() {
-  const [booted, setBooted] = useState(false);
-
-  useEffect(() => {
-    if (booted) document.title = data.meta.siteTitle;
-  }, [booted]);
+  const [booted, setBooted] = useState(false)
 
   return (
     <>
-      <BootScreen lines={data.meta.bootLines} onDone={() => setBooted(true)} />
-      <CRTOverlay />
+      {!booted && (
+        <BootSequence messages={data.profile.bootMessages} onDone={() => setBooted(true)} />
+      )}
 
-      <div id="site" className={booted ? 'revealed' : ''}>
-        <Header profile={data.profile} />
-        <main>
-          <Hero profile={data.profile} started={booted} />
+      <div className="crt-overlay" />
+      <div className="crt-vignette" />
+      <div className="crt-flicker" />
+
+      {booted && (
+        <>
+          <Navbar title={data.site.title} />
+          <Hero profile={data.profile} />
           <About profile={data.profile} />
-          <Skills categories={data.skills.categories} />
+          <Skills skills={data.skills} />
           <Projects projects={data.projects} />
-          <Resume experience={data.experience} education={data.education} resume={data.resume} />
-          <Contact contact={data.contact} />
-        </main>
-        <Footer profile={data.profile} />
-      </div>
-
-      <BackToTop />
+          <Resume resume={data.resume} />
+          <Terminal terminal={data.terminal} />
+          <Footer profile={data.profile} />
+          <Character character={data.character} />
+        </>
+      )}
     </>
-  );
+  )
 }

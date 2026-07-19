@@ -1,40 +1,30 @@
-import Reveal from './Reveal.jsx';
-
-const ICON_MAP = {
-  github: '◆',
-  linkedin: '▣',
-  twitter: '✈',
-  mail: '✉',
-};
+import Reveal from './Reveal.jsx'
 
 export default function About({ profile }) {
   return (
-    <section id="about">
-      <div className="container">
-        <div className="section-label">SECTION 01</div>
-        <h2 className="section-title">
-          ABOUT_<span className="accent">ME</span>
-        </h2>
-        <div className="about-grid">
-          <Reveal>
-            <div className="avatar-box">{profile.avatarText}</div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="about-text">{profile.about}</p>
-            <div className="about-meta">
-              <span>LOCATION: <b>{profile.location}</b></span>
-              <span>STATUS: <b>{profile.status.replace(/_/g, ' ')}</b></span>
-            </div>
-            <div className="social-row">
-              {profile.socials.map((s) => (
-                <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" title={s.label}>
-                  {ICON_MAP[s.icon] || '◆'}
-                </a>
-              ))}
-            </div>
-          </Reveal>
+    <section id="about" className="container">
+      <Reveal>
+        <div className="section-heading">
+          <span className="num">01</span>
+          <h2>about.txt</h2>
+          <span className="rule" />
         </div>
-      </div>
+      </Reveal>
+      <Reveal delay={0.1}>
+        <div className="about-grid">
+          <div className="about-avatar">
+            <img src={profile.avatar} alt={profile.name} />
+          </div>
+          <div className="about-text">
+            <p>{profile.about}</p>
+            <div className="about-meta">
+              <span className="chip">{profile.role}</span>
+              <span className="chip">{profile.location}</span>
+              <span className="chip">{profile.handle}</span>
+            </div>
+          </div>
+        </div>
+      </Reveal>
     </section>
-  );
+  )
 }

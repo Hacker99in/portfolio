@@ -1,32 +1,19 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-// Wraps children in a scroll-triggered reveal animation (blur + rise).
-// glitch=true adds a short glitch "cut" effect (from index.css) as it snaps into place.
-export default function Reveal({ children, className = '', glitch = false, delay = 0, as = 'div' }) {
-  const Tag = motion[as] || motion.div;
-  const [entered, setEntered] = useState(false);
-
-  const variants = {
-    hidden: { opacity: 0, y: 28, filter: 'blur(2px)' },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      transition: { duration: 0.7, ease: [0.2, 0.7, 0.2, 1], delay },
-    },
-  };
-
+/**
+ * Wraps children with a scroll-triggered reveal animation.
+ * Used throughout the page for the "cut scene" feel as sections enter view.
+ */
+export default function Reveal({ children, delay = 0, className = '' }) {
   return (
-    <Tag
-      className={`reveal ${glitch ? 'reveal-glitch' : ''} ${entered ? 'in' : ''} ${className}`}
-      initial="hidden"
-      whileInView="visible"
-      onViewportEnter={() => setEntered(true)}
-      viewport={{ once: true, margin: '-40px' }}
-      variants={variants}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.55, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
-    </Tag>
-  );
+    </motion.div>
+  )
 }
