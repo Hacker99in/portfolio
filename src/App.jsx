@@ -30,7 +30,7 @@ export default function App() {
           <Hero profile={data.profile} />
           <About profile={data.profile} />
           <Skills skills={data.skills} />
-          <Projects projects={data.projects} />
+          {/* <Projects projects={data.projects} /> */}
           <Resume resume={data.resume} />
           <Terminal terminal={data.terminal} />
           <Footer profile={data.profile} />

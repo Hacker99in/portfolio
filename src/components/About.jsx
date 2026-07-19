@@ -2,7 +2,7 @@ import Reveal from './Reveal.jsx'
 
 export default function About({ profile }) {
   return (
-    <section id="about" className="container">
+    <section id="about" className="container" >
       <Reveal>
         <div className="section-heading">
           <span className="num">01</span>

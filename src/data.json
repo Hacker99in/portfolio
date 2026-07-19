@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "~/portfolio",
+    "title": "PORTFOLIO",
     "favicon": "🖥️"
   },
   "profile": {
-    "name": "JANE DOE",
-    "handle": "@janedoe",
-    "role": "Full-Stack Developer",
+    "name": "HARSHVARDHAN PATIL",
+    "handle": "@HACKERZ_99",
+    "role": "Developer",
     "tagline": "I build things that live on the internet.",
-    "location": "Nashik, India",
+    "location": "MUMBAI, India",
     "bootMessages": [
       "INITIALIZING BIOS...",
       "LOADING KERNEL MODULES...",
@@ -16,14 +16,13 @@
       "CONNECTING TO PORTFOLIO.SYS...",
       "WELCOME, USER."
     ],
-    "about": "I'm a software developer who likes turning coffee into code and bugs into features (eventually). I care about clean UI, fast software, and pixel-perfect nostalgia. When I'm not coding, I'm probably reverse-engineering an old video game or losing to my own AI chatbot.",
-    "avatar": "https://api.dicebear.com/7.x/pixel-art/svg?seed=JaneDoe",
+    "about": "I enjoy building software, exploring new technologies, and constantly learning through experiments. Alongside preparing for NEET, I spend my free time coding, diving into cyberworld, and creating fun projects like this portfolio. Outside of tech, I'm passionate about photography, trekking, art, and nature. I'm always excited to learn, create, and challenge myself.",
+    "avatar": "/portfolio/lala.png",
     "email": "jane.doe@example.com",
     "socials": [
-      { "label": "GitHub", "url": "https://github.com/", "icon": "github" },
-      { "label": "LinkedIn", "url": "https://linkedin.com/", "icon": "linkedin" },
-      { "label": "Twitter", "url": "https://twitter.com/", "icon": "twitter" },
-      { "label": "Email", "url": "mailto:jane.doe@example.com", "icon": "mail" }
+      { "label": "GitHub", "url": "https://github.com/Hacker99in", "icon": "github" },
+      { "label": "youtube", "url": "https://www.youtube.com/@HACKERZ_99", "icon": "youtube" },
+      { "label": "Email", "url": "mailto:08harshvardhan03@gmail.com", "icon": "mail" }
     ]
   },
   "skills": [
@@ -32,96 +31,103 @@
       "items": ["JavaScript", "TypeScript", "Python", "Go", "SQL"]
     },
     {
-      "category": "Frontend",
-      "items": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Redux"]
+      "category": "CINEMATO",
+"items": [
+  "Camera Operation",
+  "Lighting",
+  "Composition",
+  "Color Grading",
+  "DaVinci Resolve"
+]
+
     },
     {
-      "category": "Backend",
-      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL"]
+     "category": "ARTS",
+"items": [
+  "Sketching",
+  "Doodle",
+  "Digital Art",
+  "Illustration",
+  "Creative Design"
+]
     },
     {
-      "category": "Tools",
-      "items": ["Docker", "Git", "AWS", "Figma", "Linux"]
-    }
+     "category": "PHOTOGRAPHY",
+"items": [
+  "Asthetic Photography",
+  "Street Photography",
+  "Landscape Photography",
+  "Photo Editing",
+  "Adobe Lightroom"
+]
+    },
+    {
+  "category": "TREKKING",
+  "items": [
+    "Mountain Hiking",
+    "Trail Navigation",
+    "Camping",
+    "Nature Exploration",
+    "Adventure Planning"
+  ]
+}
   ],
   "projects": [
     {
       "title": "Retro Terminal Portfolio",
       "description": "A CRT-themed personal site with a talking sidekick and a working fake terminal. Yes, this one.",
       "tech": ["React", "Vite", "Framer Motion"],
-      "image": "https://api.dicebear.com/7.x/shapes/svg?seed=project1",
+      "image": "/portfolio/2222.png",
       "liveUrl": "https://example.com",
       "repoUrl": "https://github.com/",
       "featured": true
-    },
-    {
-      "title": "PixelTasks",
-      "description": "An 8-bit styled task manager with drag & drop boards, local persistence and chiptune sound effects.",
-      "tech": ["React", "Zustand", "IndexedDB"],
-      "image": "https://api.dicebear.com/7.x/shapes/svg?seed=project2",
-      "liveUrl": "https://example.com",
-      "repoUrl": "https://github.com/",
-      "featured": true
-    },
-    {
-      "title": "Synthwave Weather",
-      "description": "A weather dashboard with animated retro-sun gradients that shift with real-time conditions.",
-      "tech": ["Next.js", "OpenWeather API", "Framer Motion"],
-      "image": "https://api.dicebear.com/7.x/shapes/svg?seed=project3",
-      "liveUrl": "https://example.com",
-      "repoUrl": "https://github.com/",
-      "featured": false
-    },
-    {
-      "title": "Bit Bazaar",
-      "description": "A mock e-commerce storefront exploring cart state, checkout flows and skeleton loading states.",
-      "tech": ["React", "Stripe", "Node.js"],
-      "image": "https://api.dicebear.com/7.x/shapes/svg?seed=project4",
-      "liveUrl": "https://example.com",
-      "repoUrl": "https://github.com/",
-      "featured": false
     }
   ],
   "resume": {
     "downloadUrl": "/resume.pdf",
-    "summary": "5 years building web products end-to-end, from database schema to pixel-pushed UI.",
+    "summary": "8 Months building web products end-to-end.",
     "experience": [
       {
-        "role": "Senior Frontend Engineer",
-        "company": "PixelWorks Inc.",
-        "period": "2023 — Present",
+        "role": "DIRECTOR",
+        "company": "MOVIE Inc.",
+        "period": "2023 — 2025",
         "points": [
-          "Led migration of legacy jQuery app to React + TypeScript",
-          "Cut bundle size by 40% through code-splitting and lazy loading",
-          "Mentored 3 junior engineers"
-        ]
+          "Directed short films from concept development to final production.",
+          "Collaborated with cinematographers, editors, and actors to achieve a cohesive visual style.",
+          "Planned storyboards, shot compositions, and scene blocking for cinematic storytelling.",
+           "Managed production schedules and ensured projects were delivered on time."
+  ]
+        
       },
       {
-        "role": "Frontend Developer",
-        "company": "Byteforge Studio",
-        "period": "2021 — 2023",
-        "points": [
-          "Built component library used across 6 product teams",
-          "Shipped real-time dashboard used by 10k+ daily users"
-        ]
+        "role": "DALE CARNEGIE PARTICIPANT",
+  "company": "SACRED HEART SCHOOL",
+  "period": "2024 — 2025",
+  "points": [
+    "Developed public speaking and confident communication skills through regular presentations.",
+    "Strengthened leadership, teamwork, and problem-solving abilities in group activities.",
+    "Participated in personality development workshops focused on confidence and interpersonal skills.",
+    "Improved time management, active listening, and effective communication."
+  ]
+        
       },
       {
         "role": "Junior Developer",
         "company": "StartUp Labs",
-        "period": "2019 — 2021",
+        "period": "2021 — present",
         "points": [
           "Built and maintained REST APIs in Node.js",
-          "Worked on internal tooling and CI/CD pipelines"
+          "Worked on internal tooling "
         ]
       }
     ],
     "education": [
-      {
-        "degree": "B.Tech in Computer Science",
-        "school": "State University",
-        "period": "2015 — 2019"
-      }
-    ]
+  {
+    "degree": "Preparing for NEET (Medical Entrance Exam)",
+    "school": "Self Study / Coaching Institute",
+    "period": "2025 — Present"
+  }
+]
   },
   "character": {
     "name": "PIXEL",
@@ -141,18 +147,18 @@
     ]
   },
   "terminal": {
-    "prompt": "guest@portfolio",
+    "prompt": "Admin",
     "welcome": [
       "Retro Terminal v1.0.0",
       "Type 'help' to see available commands."
     ],
     "commands": {
       "help": "Available commands: help, about, skills, projects, contact, resume, whoami, sudo, date, clear, echo, coffee",
-      "about": "JANE DOE — Full-Stack Developer. Type 'whoami' for more.",
+      "about": "꧁HARSHVARDHAN PATIL꧂ —  Developer. Type 'whoami' for more.",
       "whoami": "guest — you're just visiting, but you're welcome here.",
       "skills": "JavaScript, TypeScript, React, Node.js, Python, and enough CSS to be dangerous.",
       "projects": "Run 'projects' anytime to be reminded to scroll up and look — there's a whole section for that.",
-      "contact": "Email jane.doe@example.com or use the links in the header.",
+      "contact": "Email 08harshvardhan03@gmail.com or use the links in the header.",
       "resume": "Scroll to the resume section, or click download there.",
       "sudo": "Nice try. Permission denied: you are not in the sudoers file. This incident will be reported.",
       "coffee": "☕ Brewing... Error 418: I'm a teapot.",
