@@ -22,7 +22,8 @@
     "socials": [
       { "label": "GitHub", "url": "https://github.com/Hacker99in", "icon": "github" },
       { "label": "youtube", "url": "https://www.youtube.com/@HACKERZ_99", "icon": "youtube" },
-      { "label": "Email", "url": "mailto:08harshvardhan03@gmail.com", "icon": "mail" }
+      { "label": "Email", "url": "mailto:08harshvardhan03@gmail.com", "icon": "mail" },
+      { "label": "Instagram", "url": "https://www.instagram.com/harshvardhan_99_/", "icon": "Instagram" }
     ]
   },
   "skills": [

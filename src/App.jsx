@@ -34,7 +34,7 @@ export default function App() {
           <Resume resume={data.resume} />
           <Terminal terminal={data.terminal} />
           <Footer profile={data.profile} />
-          <Character character={data.character} />
+          {/* <Character character={data.character} /> */}
         </>
       )}
     </>
