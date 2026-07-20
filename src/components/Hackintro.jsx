@@ -5,16 +5,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 const GLYPHS = '01アイウエオカキクケコサシスセソ0123456789$#%&@!?<>[]{}/\\|'
 
 const PHASES = [
- { text: '!!! TEST TEST TEST !!!', duration: 5000 },
+  { text: 'INITIATING UNAUTHORIZED ACCESS...', duration: 480 },
+  { text: 'BYPASSING FIREWALL [ATTEMPT 1/1]', duration: 520 },
+  { text: 'DECRYPTING SECURE CHANNEL //// 42%', duration: 460 },
+  { text: 'DECRYPTING SECURE CHANNEL //////// 100%', duration: 420 },
+  { text: 'INTRUSION DETECTED', duration: 480, alert: true },
+  { text: 'COUNTERMEASURES: FAILED', duration: 420, alert: true },
+  { text: 'ACCESS GRANTED', duration: 620, success: true },
 ]
 
 export default function HackIntro({ onDone }) {
-  alert('HACKINTRO IS RUNNING')
+  console.log('HACKINTRO IS RUNNING')
 
   const canvasRef = useRef(null)
   const [phaseIndex, setPhaseIndex] = useState(0)
   const [shake, setShake] = useState(false)
   const [flashDone, setFlashDone] = useState(false)
+  const reducedMotion = false // TEMP: forced off for testing
 
   useEffect(() => {
     if (reducedMotion) onDone()
