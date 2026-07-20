@@ -1,0 +1,22 @@
+.terminal-pro .out-error {
+  color: #ff5c5c;
+}
+
+.terminal-pro .out-success {
+  color: #4dff8f;
+}
+
+.terminal-pro .out-info {
+  color: #6fc3ff;
+}
+
+.terminal-pro .out-ascii {
+  color: #00ff9c;
+  white-space: pre;
+  font-size: 0.85em;
+  line-height: 1.15;
+}
+
+.terminal-pro .terminal-body {
+  scroll-behavior: smooth;
+}

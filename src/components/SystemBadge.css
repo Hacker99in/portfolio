@@ -1,0 +1,44 @@
+.sys-badge {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(10, 13, 10, 0.85);
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  color: #7fdb9f;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.sys-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #00ff9c;
+  box-shadow: 0 0 6px #00ff9c;
+  animation: sys-pulse 2s ease-in-out infinite;
+}
+
+.sys-label {
+  color: #00ff9c;
+}
+
+.sys-sep {
+  color: #3a4a3a;
+}
+
+@keyframes sys-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (max-width: 640px) {
+  .sys-badge { display: none; }
+}
