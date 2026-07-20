@@ -1,0 +1,244 @@
+/* ============================================================
+   HACKING INTRO / RED ALERT FX
+   Purely additive — new custom properties + new classes only.
+   Nothing above this point in index.css needs to change.
+   ============================================================ */
+
+:root {
+  --danger: #ff2d3d;
+  --danger-dim: #8c1420;
+  --danger-glow: rgba(255, 45, 61, 0.55);
+}
+
+/* ---------------- Hack intro screen ---------------- */
+.hack-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  background: #060203;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.hack-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.hack-scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 1px,
+    rgba(0, 0, 0, 0.28) 2px,
+    rgba(0, 0, 0, 0.28) 3px
+  );
+  mix-blend-mode: multiply;
+}
+
+.hack-vignette-red {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 22vw rgba(140, 0, 10, 0.55);
+  animation: hackPulseVignette 1.8s ease-in-out infinite;
+}
+
+@keyframes hackPulseVignette {
+  0%, 100% { box-shadow: inset 0 0 22vw rgba(140, 0, 10, 0.45); }
+  50% { box-shadow: inset 0 0 26vw rgba(140, 0, 10, 0.7); }
+}
+
+.hack-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 6vw 8vw;
+  background: linear-gradient(to top, rgba(6,2,3,0.92) 0%, rgba(6,2,3,0.55) 55%, transparent 100%);
+}
+
+.hack-loglist {
+  margin-bottom: 10px;
+}
+
+.hack-logline {
+  font-size: 13px;
+  color: var(--danger-dim);
+  opacity: 0.65;
+  margin-bottom: 4px;
+}
+
+.hack-logline-done::before {
+  content: '> ';
+}
+
+.hack-status {
+  position: relative;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(13px, 2.6vw, 22px);
+  color: var(--danger);
+  text-shadow: 0 0 14px var(--danger-glow), 0 0 30px var(--danger-glow);
+  letter-spacing: 1px;
+}
+
+.hack-status::before,
+.hack-status::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.hack-status::before {
+  color: #fff;
+  clip-path: inset(0 0 55% 0);
+  animation: hackGlitchTop 0.6s infinite linear alternate-reverse;
+}
+
+.hack-status::after {
+  color: #7a0010;
+  clip-path: inset(55% 0 0 0);
+  animation: hackGlitchBottom 0.7s infinite linear alternate-reverse;
+}
+
+@keyframes hackGlitchTop {
+  0% { transform: translate(0,0); }
+  20% { transform: translate(-3px,-1px); }
+  40% { transform: translate(3px,1px); }
+  60% { transform: translate(-2px,1px); }
+  80% { transform: translate(2px,-1px); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes hackGlitchBottom {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(3px,1px); }
+  50% { transform: translate(-3px,-1px); }
+  75% { transform: translate(2px,-1px); }
+  100% { transform: translate(0,0); }
+}
+
+.hack-status-alert {
+  animation: hackAlertFlicker 0.18s steps(2) infinite;
+}
+
+@keyframes hackAlertFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.hack-status-success {
+  color: var(--green);
+  text-shadow: 0 0 14px rgba(77,255,136,0.6), 0 0 30px rgba(77,255,136,0.4);
+}
+
+.hack-status-success::before,
+.hack-status-success::after {
+  content: none;
+}
+
+.hack-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.9em;
+  background: currentColor;
+  margin-left: 6px;
+  animation: blink 0.6s steps(1) infinite;
+  vertical-align: middle;
+}
+
+.hack-shake {
+  animation: hackShake 0.22s linear;
+}
+
+@keyframes hackShake {
+  0% { transform: translate(0,0); }
+  20% { transform: translate(-6px, 3px); }
+  40% { transform: translate(5px, -4px); }
+  60% { transform: translate(-4px, 4px); }
+  80% { transform: translate(6px, -2px); }
+  100% { transform: translate(0,0); }
+}
+
+.hack-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 20001;
+  background: #fff;
+}
+
+/* ---------------- Extra site-wide effects (optional, opt-in via class) ---------------- */
+
+/* Drop onto any heading/link for a quick glitch flicker on hover */
+.fx-glitch-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.fx-glitch-hover:hover {
+  animation: fxGlitchHover 0.35s steps(2);
+}
+
+@keyframes fxGlitchHover {
+  0% { text-shadow: 0 0 0 transparent; transform: translate(0,0); }
+  25% { text-shadow: -2px 0 var(--magenta), 2px 0 var(--danger); transform: translate(-1px,0); }
+  50% { text-shadow: 2px 0 var(--danger), -2px 0 var(--green); transform: translate(1px,0); }
+  75% { text-shadow: -1px 0 var(--magenta); transform: translate(-1px,0); }
+  100% { text-shadow: 0 0 0 transparent; transform: translate(0,0); }
+}
+
+/* Drop onto a badge/chip/button to give it a slow red alert pulse */
+.fx-alert-pulse {
+  animation: fxAlertPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes fxAlertPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,45,61,0); }
+  50% { box-shadow: 0 0 16px var(--danger-glow); }
+}
+
+/* Ambient red static grain overlay — opt-in, e.g. wrap featured sections */
+.fx-static-noise {
+  position: relative;
+  overflow: hidden;
+}
+
+.fx-static-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255,45,61,0.6) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: fxNoiseShift 0.4s steps(4) infinite;
+}
+
+@keyframes fxNoiseShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 6px 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hack-vignette-red,
+  .hack-status::before,
+  .hack-status::after,
+  .hack-status-alert,
+  .hack-shake,
+  .fx-glitch-hover:hover,
+  .fx-alert-pulse,
+  .fx-static-noise::after {
+    animation: none !important;
+  }
+}

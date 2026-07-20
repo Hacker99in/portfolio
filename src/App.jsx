@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import data from './data.json'
+import HackIntro from './components/Hackintro.jsx'
 import BootSequence from './components/BootSequence.jsx'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
@@ -12,11 +13,14 @@ import Footer from './components/Footer.jsx'
 import Character from './components/Character.jsx'
 
 export default function App() {
+  const [hacked, setHacked] = useState(false)
   const [booted, setBooted] = useState(false)
 
   return (
     <>
-      {!booted && (
+      {!hacked && <HackIntro onDone={() => setHacked(true)} />}
+
+      {hacked && !booted && (
         <BootSequence messages={data.profile.bootMessages} onDone={() => setBooted(true)} />
       )}
 

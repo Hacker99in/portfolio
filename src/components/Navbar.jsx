@@ -22,7 +22,7 @@ export default function Navbar({ title }) {
         <ul className={`nav-links ${open ? 'open' : ''}`}>
           {LINKS.map((l) => (
             <li key={l.href}>
-              <a href={l.href} onClick={() => setOpen(false)}>
+              <a href={l.href} onClick={() => setOpen(false)} className="fx-glitch-hover">
                 {l.label}
               </a>
             </li>

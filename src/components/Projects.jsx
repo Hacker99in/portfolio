@@ -13,8 +13,8 @@ export default function Projects({ projects }) {
       <div className="projects-grid">
         {projects.map((p, i) => (
           <Reveal delay={i * 0.08} key={p.title}>
-            <div className="panel project-card">
-              {p.featured && <span className="featured-badge">featured</span>}
+            <div className={`panel project-card${p.featured ? ' fx-static-noise' : ''}`}>
+              {p.featured && <span className="featured-badge fx-alert-pulse">featured</span>}
               <img className="project-img" src={p.image} alt={p.title} />
               <div className="project-body">
                 <h3>{p.title}</h3>
