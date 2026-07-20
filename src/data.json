@@ -79,8 +79,8 @@
       "description": "A CRT-themed personal site with a talking sidekick and a working fake terminal. Yes, this one.",
       "tech": ["React", "Vite", "Framer Motion"],
       "image": "/portfolio/2222.png",
-      "liveUrl": "https://example.com",
-      "repoUrl": "https://github.com/",
+      "liveUrl": "",
+      "repoUrl": "",
       "featured": true
     }
   ],
