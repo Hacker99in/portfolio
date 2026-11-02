@@ -98,7 +98,7 @@
       "title": "Oversight (Short Film)",
       "description": "An award-winning short film directed by me, officially selected and winning at an international film festival.",
       "tech": ["Directing", "Cinematography", "DaVinci Resolve"],
-      "image": "/portfolio/oversight.png",
+      "image": "/portfolio/OVERSIGHT.png",
       "liveUrl": "",
       "repoUrl": "",
       "featured": true
@@ -107,7 +107,7 @@
       "title": "Untitled Tycoon Game",
       "description": "Our first-ever tycoon game, built by a team of three. Currently in active development, with a planned release in the coming months or years.",
       "tech": ["Game Design", "Team Project", "In Development"],
-      "image": "/portfolio/tycoon.png",
+      "image": "/portfolio/image.png",
       "liveUrl": "",
       "repoUrl": "",
       "featured": false
