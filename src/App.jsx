@@ -1,7 +1,7 @@
 import { useState } from "react";
 import data from "./data.json";
 
-import HackIntro from "./components/HackIntro.jsx";
+import HackIntro from "./components/Hackintro.jsx";
 import BootSequence from "./components/BootSequence.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
